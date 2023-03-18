@@ -10,7 +10,7 @@ export default createBrowserRouter([
         errorElement: <ErrorPage />
     },
     {
-        path: '/course',
+        path: '/course/:courseId',
         element: <CourseViewPage />
     }
 ]);
