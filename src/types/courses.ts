@@ -45,6 +45,7 @@ export const CoursePreviewSchema = z.object({
     duration: z.number(),
     previewImageLink: z.string(),
     rating: z.number(),
+    lessons: CourseLessonSchema.array(),
     meta: z.object({
         slug: z.string(),
         skills: z.array(z.string()),
@@ -54,7 +55,6 @@ export const CoursePreviewSchema = z.object({
             previewImageLink: z.string()
         })
     }),
-    lessons: z.array(CourseLessonSchema),
     containsLockedLessons: z.boolean()
 });
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { ICourse } from '../../types/courses';
+import type { ICourse, ICoursePreview } from '../../types/courses';
 import config from '../../config';
 
 const coursesTokenAxiosClient = axios.create({
@@ -29,8 +29,19 @@ export const coursesApi = createApi({
             transformResponse: (response: { courses: Array<ICourse> }, meta, arg) => {
                 return response.courses;
             }
+        }),
+        getCourse: builder.query<ICoursePreview, string | undefined>({
+            query: (id) => {
+                if (!id) {
+                    throw new Error('No id provided');
+                }
+                return `/core/preview-courses/${id}`;
+            },
+            transformResponse: (response: ICoursePreview, meta, arg) => {
+                return response;
+            }
         })
     })
 });
 
-export const { useGetCourseListQuery } = coursesApi;
+export const { useGetCourseListQuery, useGetCourseQuery } = coursesApi;

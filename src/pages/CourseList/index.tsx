@@ -10,6 +10,7 @@ const CourseListPage = () => {
     const { setItemList, isPaginating, currentPage, setCurrentPage, pageItems, totalPages } =
         usePagination<ICourse>(courseList, 10);
 
+    // throwing an error so router errorElement catches it
     if (error) {
         throw error;
     }
@@ -37,4 +38,5 @@ const CourseListPage = () => {
     );
 };
 
+export { ErrorPage } from './error';
 export default CourseListPage;
