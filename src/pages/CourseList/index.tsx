@@ -1,8 +1,8 @@
 import { CourseList } from '../../components/pages/CourseList';
 import { Pagination } from '../../components/common/Pagination';
+import { useGetCourseListQuery } from '../../services/courses';
 import { Loader } from './loader';
 import { usePagination } from '../../hooks/usePagination';
-import { useGetCourseListQuery } from '../../services/courses';
 import { ICourse } from '../../types/courses';
 
 const CourseListPage = () => {
@@ -21,7 +21,7 @@ const CourseListPage = () => {
             ) : (
                 <>
                     <CourseList courseList={pageItems} />
-                    <div className='md:col-span-2 w-1/4 '>
+                    <div className='md:col-span-2 w-1/4'>
                         <Pagination
                             setItemList={setItemList}
                             isPaginating={isPaginating}

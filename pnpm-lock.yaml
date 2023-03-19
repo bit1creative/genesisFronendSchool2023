@@ -8,6 +8,7 @@ specifiers:
   '@vitejs/plugin-react-swc': ^3.0.0
   autoprefixer: ^10.4.14
   axios: ^1.3.4
+  hls.js: 1.3.5-0.canary.8981
   postcss: ^8.4.21
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -21,6 +22,7 @@ specifiers:
 dependencies:
   '@reduxjs/toolkit': 1.9.3_k4ae6lp43ej6mezo3ztvx6pykq
   axios: 1.3.4
+  hls.js: 1.3.5-0.canary.8981
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.5_3xleytyzprlgycb2ded54tx72i
@@ -717,6 +719,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /hls.js/1.3.5-0.canary.8981:
+    resolution: {integrity: sha512-W76eJrpWD3eoT7ugS6+MfoWKnr+iBXRw6/LVwvjfLsF0palKcN722VkTMYNPdgdTyl1ST5+tVEl/si3iloZElA==}
+    dev: false
 
   /hoist-non-react-statics/3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
