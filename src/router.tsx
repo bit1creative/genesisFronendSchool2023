@@ -1,16 +1,23 @@
 import { createBrowserRouter } from 'react-router-dom';
-import CourseListPage from './pages/CourseListPage';
-import CourseViewPage from './pages/CourseViewPage';
-import ErrorPage from './pages/ErrorPage';
+import Root, { ErrorPage as RootErrorPage } from './pages/Root';
+import CourseListPage from './pages/CourseList';
+import CourseViewPage, { Loader as CourseViewLoader } from './pages/CourseView';
 
 export default createBrowserRouter([
     {
         path: '/',
-        element: <CourseListPage />,
-        errorElement: <ErrorPage />
-    },
-    {
-        path: '/course/:courseId',
-        element: <CourseViewPage />
+        element: <Root />,
+        errorElement: <RootErrorPage />,
+        children: [
+            {
+                path: '/',
+                element: <CourseListPage />
+            },
+            {
+                path: '/course/:courseId',
+                loader: CourseViewLoader,
+                element: <CourseViewPage />
+            }
+        ]
     }
 ]);

@@ -5,8 +5,8 @@ import { RouterProvider } from 'react-router-dom';
 
 import router from './router';
 import store from './store';
-import config from './config';
 
+import './config';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
